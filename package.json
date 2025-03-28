@@ -1,6 +1,6 @@
 {
   "name": "sma-solar",
-  "version": "1.0.1",
+  "version": "1.0.9",
   "type": "module",
   "license": "GPL-3.0+",
   "description": "http client for sma solar webconnect portal",
@@ -29,6 +29,7 @@
     "README.md",
     "LICENSE",
     "src/**/*.ts",
+    "dist/**/*.json",
     "dist/**/*.js",
     "dist/**/*.js.map",
     "dist/**/*.d.ts",
@@ -40,8 +41,8 @@
     "!dist/**/*_test.d.ts.map"
   ],
   "scripts": {
-    "dev": "tsx watch src/cli",
-    "build": "tsc --build && chmod +x ./dist/cli.js",
+    "dev": "tsx watch src/cli.ts",
+    "build": "npm run clean && tsc --build && chmod +x ./dist/cli.js && echo 'Done.'",
     "clean": "rm -rf dist/"
   },
   "devDependencies": {

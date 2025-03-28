@@ -6,22 +6,14 @@ import { createClient, isSMAResponse } from "./client.js";
 const main = defineCommand({
   meta: {
     name: "sma-solar",
-    version: "1.0.0",
     description: "http client for sma solar panel webconnect ui",
   },
   args: {
-    host: {
+    hostname: {
       type: "string",
-      description: "Host name or address",
-      alias: ["h", "hostname"],
+      description: "Hostname or address",
+      alias: ["h", "host"],
       required: true,
-    },
-    role: {
-      type: "string",
-      description: "Webconnect role",
-      alias: ["r"],
-      default: "usr",
-      required: false,
     },
     password: {
       type: "string",
@@ -29,13 +21,20 @@ const main = defineCommand({
       alias: ["p", "pass"],
       required: true,
     },
+    role: {
+      type: "string",
+      description: "SMA Webconnect role",
+      alias: ["r"],
+      default: "usr",
+      required: false,
+    },
   },
   async run({ args, cmd }) {
     const meta = cmd.meta as CommandMeta;
-    console.log(`${meta.name} ${meta.version}  Copyright (C) 2025  Rick Wong\n`);
+    console.log(`${meta.name}  Copyright (C) 2025  Rick Wong\n`);
 
     try {
-      const client = await createClient(args.host, args.role, args.password);
+      const client = await createClient(args.hostname, args.role, args.password);
 
       while (1) {
         const sleepP = new Promise((resolve) => setTimeout(resolve, 5000));
