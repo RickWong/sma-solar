@@ -5,7 +5,7 @@ An HTTP client for the SMA Solar Inverters Webconnect Portal.
 ## Usage
 
 ```sh
-npx sma-solar -- -h '192.168.1.2' -p 'password'
+npm exec -- sma-solar -h '192.168.1.2' -p 'password'
 
 > 2025-03-28 14:56:07  Current power: 161 W
 > 2025-03-28 14:56:12  Current power: 160 W

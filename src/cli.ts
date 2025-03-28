@@ -1,5 +1,7 @@
+#!/usr/bin/env node
+
 import { defineCommand, runMain, type CommandMeta } from "citty";
-import { createClient, isSMAResponse } from "./client";
+import { createClient, isSMAResponse } from "./client.js";
 
 const main = defineCommand({
   meta: {
