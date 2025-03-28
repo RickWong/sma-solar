@@ -1,0 +1,55 @@
+{
+  "name": "sma-solar",
+  "version": "1.0.0",
+  "type": "module",
+  "license": "GPL-3.0+",
+  "description": "http client for sma solar webconnect portal",
+  "author": "Rick Wong",
+  "keywords": [
+    "sma",
+    "sunny",
+    "solar",
+    "inverter",
+    "panel",
+    "http",
+    "client",
+    "webconnect",
+    "power",
+    "grid",
+    "measurement",
+    "ac",
+    "dc",
+    "watt"
+  ],
+  "main": "./dist/src/index.js",
+  "bin": "./dist/src/cli.js",
+  "exports": "./dist/src/index.js",
+  "files": [
+    "package.json",
+    "README.md",
+    "LICENSE",
+    "src/**/*.ts",
+    "dist/**/*.js",
+    "dist/**/*.js.map",
+    "dist/**/*.d.ts",
+    "dist/**/*.d.ts.map",
+    "!src/**/*_test.ts",
+    "!dist/**/*_test.js",
+    "!dist/**/*_test.js.map",
+    "!dist/**/*_test.d.ts",
+    "!dist/**/*_test.d.ts.map"
+  ],
+  "scripts": {
+    "dev": "tsx watch src/cli",
+    "build": "tsc --build",
+    "clean": "rm -rf dist/"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.13",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "citty": "^0.1.6"
+  }
+}
